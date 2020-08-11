@@ -634,6 +634,7 @@ print_dimly "stage: configure_vm"
 VBoxManage modifyvm "${vm_name}" --cpus "${cpu_count}" --memory "${memory_size}" \
  --vram "${gpu_vram}" --pae on --boot1 none --boot2 none --boot3 none \
  --boot4 none --firmware efi --rtcuseutc on --chipset ich9 ${extension_pack_usb3_support} \
+ --cpuidset 00000001 000106e5 00100800 0098e3fd bfebfbff --cpu-profile "Intel Core i7-2635QM" \
  --mouse usbtablet --keyboard usb --audiocontroller hda --audiocodec stac9221
 
 VBoxManage setextradata "${vm_name}" \
